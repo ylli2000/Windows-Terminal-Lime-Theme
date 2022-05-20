@@ -2,7 +2,7 @@
 
 This is the instruction to make your Windows Terminal look cool.  
 
-There are lots of articles on about this topic already. However, I couldn't find anything that covers how to set up: 
+There are lots of articles on this topic already. However, I couldn't find anything that covers how to set up: 
 
 1. `Windows PowerShell`
 2. `Git Bash` 
