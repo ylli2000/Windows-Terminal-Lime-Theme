@@ -126,9 +126,18 @@ Copy & paste this code into it:
         "schemes": 
         [
             {
+                "name": "Lime",
+                "foreground": "#E8F4FF",
                 "background": "#1A1A1A",
+                "selectionBackground": "#FFFFFF",
                 "black": "#000000",
                 "blue": "#579BD5",
+                "cyan": "#00B6D6",
+                "green": "#4EC9B0",
+                "purple": "#714896",
+                "red": "#E92888",
+                "white": "#EAEAEA",
+                "yellow": "#CE9178"
                 "brightBlack": "#797979",
                 "brightBlue": "#9CDCFE",
                 "brightCyan": "#2BC4E2",
@@ -138,15 +147,6 @@ Copy & paste this code into it:
                 "brightWhite": "#EAEAEA",
                 "brightYellow": "#E9AD95",
                 "cursorColor": "#FFFFFF",
-                "cyan": "#00B6D6",
-                "foreground": "#E8F4FF",
-                "green": "#4EC9B0",
-                "name": "Aurelia",
-                "purple": "#714896",
-                "red": "#E92888",
-                "selectionBackground": "#FFFFFF",
-                "white": "#EAEAEA",
-                "yellow": "#CE9178"
             }
         ],
         //experimental feature, prefer to disable it. 
