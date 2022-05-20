@@ -2,7 +2,7 @@
 
 This is the instruction to make your Windows Terminal look cool.  
 
-There is a lot of articles online on this topic already. However, I couldn't find anything that covers how to set up: 
+There are lots of articles on about this topic already. However, I couldn't find anything that covers how to set up: 
 
 1. `Windows PowerShell`
 2. `Git Bash` 
@@ -302,7 +302,7 @@ To be explored, but it should be pretty standard following the oh-my-posh docs.
 -----------------------------------------
 **10. Known Issues**
 
-#1. I noticed that the text & icons in `oh-my-gosh` path is not align properly with my theme.
+#1. I have noticed that the text & icons in `oh-my-gosh` path are not aligned properly with.
 
 ![issue1](./images/issue1.png "issue")
 
