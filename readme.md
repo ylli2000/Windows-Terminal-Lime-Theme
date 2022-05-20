@@ -19,7 +19,7 @@ Screenshot to show that it works on `VS Code` as well:
 So are you ready?
 
 --------------------------------------------
-**1. Windows Terminal 7**
+**1. Windows Terminal**
 
 Download and install Windows Terminal if you don't have it.
 
