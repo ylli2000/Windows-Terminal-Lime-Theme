@@ -283,6 +283,7 @@ Create `cmd-oh-my-posh.lua` file in the folder:
     end
 
 Restart Windows Terminal to see it take effect.
+
 -----------------------------------------
 **8. For WSL**
 
