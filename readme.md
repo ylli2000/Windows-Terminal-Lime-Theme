@@ -23,7 +23,34 @@ So are you ready?
 
 Download and install Windows Terminal if you don't have it.
 
-Open settings by clicking the gear button from the drop-down menu, then click the left bottom gear button to open your `settings.json` file.
+Create a Terminal shortcut with escalated Administrator rights.
+
+Firstly, on your desktop, right click to bring up the menu and choose `create shortcut`
+
+Properties->Shortcut tab->Target as:
+
+`%LocalAppData%\Microsoft\WindowsApps\wt.exe`
+
+Properties->Shortcut tab->Start in:
+
+`%userprofile%\AppData\Local\Microsoft\WindowsApps`
+
+Properties->Shortcut tab->Change Icon:
+
+find .ico in `\images` assets and copy it to your folder below:
+
+`%userprofile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\terminal.ico`
+(WindowsTerminal_{appid} may vary according to your computer)
+
+Properties->Shortcut tab->Advanced:
+
+check `'Run as Administrator'`
+
+Right-click the shortcut on your desktop and choose `'Pin it to taskbar'`
+
+Now, run the Windows Terminal shortcut and see it work.
+
+Open Windows Terminal settings by clicking the gear button from the drop-down menu, then click the left bottom gear button to open your `settings.json` file.
 
 Copy & paste this code into it:
 
@@ -140,11 +167,11 @@ Download and install `MesloLGM Nerd Font` (for Visual Studio Terminal)
 --------------------------------------------
 **3. Background image**
 
-You can get my half transparent logo [here](./images/lime-os-M.png) or use your own picture.
-Put the png picture into the same folder as the `setttings.json`:
+Put the png and ico files into the same folder as the `setttings.json` in:
 
 `%userprofile%\AppData\Local\Packages\Microsoft.WindowsTerminal_{appid}\LocalState`
 
+You can get my half transparent logo or use your own picture.
 Note that you may want to adjust the picture positioning in:
 
 `settings.json` -> `backgroundImageAlignment`.
