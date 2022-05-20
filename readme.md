@@ -303,7 +303,7 @@ To be explored, but it should be pretty standard following the oh-my-posh docs.
 -----------------------------------------
 **10. Known Issues**
 
-#1. I have noticed that the text & icons in `oh-my-gosh` path are not aligned properly with.
+#1. I have noticed that the text & icons in `oh-my-gosh` path are not aligned properly.
 
 ![issue1](./images/issue1.png "issue")
 
