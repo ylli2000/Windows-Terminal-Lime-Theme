@@ -69,7 +69,7 @@ Copy & paste this code into it:
                 "backgroundImage": "ms-appdata:///local/lime-os-M.png",
                 "backgroundImageAlignment": "topRight",
                 "backgroundImageStretchMode": "none",
-                "colorScheme": "Aurelia",
+                "colorScheme": "Lime",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
                 "experimental.retroTerminalEffect": false,
@@ -129,6 +129,7 @@ Copy & paste this code into it:
                 "name": "Lime",
                 "foreground": "#E8F4FF",
                 "background": "#1A1A1A",
+                "cursorColor": "#FFFFFF",
                 "selectionBackground": "#FFFFFF",
                 "black": "#000000",
                 "blue": "#579BD5",
@@ -137,7 +138,7 @@ Copy & paste this code into it:
                 "purple": "#714896",
                 "red": "#E92888",
                 "white": "#EAEAEA",
-                "yellow": "#CE9178"
+                "yellow": "#CE9178",
                 "brightBlack": "#797979",
                 "brightBlue": "#9CDCFE",
                 "brightCyan": "#2BC4E2",
@@ -145,8 +146,7 @@ Copy & paste this code into it:
                 "brightPurple": "#975EAB",
                 "brightRed": "#EB2A88",
                 "brightWhite": "#EAEAEA",
-                "brightYellow": "#E9AD95",
-                "cursorColor": "#FFFFFF",
+                "brightYellow": "#E9AD95"
             }
         ],
         //experimental feature, prefer to disable it. 
