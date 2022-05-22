@@ -369,6 +369,7 @@ Create the file if does not exist `/Documents/PowerShell/Microsoft.PowerShell_pr
     Set-PSReadLineOption -PredictionViewStyle ListView
     Set-PSReadLineOption -EditMode Windows
 ```
+Restart Windows Terminal to see it take effect.
 
 ----------------------------------------
 **6. Configure Git Bash & VS Code**
