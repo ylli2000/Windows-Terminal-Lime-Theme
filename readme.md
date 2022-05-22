@@ -5,13 +5,14 @@ This is the instruction to make your Windows Terminal look cool.
 There are lots of articles on this topic already. However, I couldn't find anything that covers how to set up: 
 
 1. `Windows PowerShell`
-2. `Git Bash` 
-3. `CMD Command Line` 
-4. `VS Code Terminal`
+2. `Git Bash`
+3. `CMD Command Line`
+4. `WSL Ubuntu` 
+5. `VS Code Terminal`
    
 All in one place. So, I have decided to put all my findings together and make it convenient those who need it. 
 
-Screenshot to show that it works with `PowerShell`, `git bash` and `cmd`:
+Screenshot to show that it works with `PowerShell`, `git bash`, `cmd`, `WSL`:
 ![demo](./images/demo.png "demo")
 Screenshot to show that it works on `VS Code` as well:
 ![demo](./images/demo2.png "demo")
@@ -56,32 +57,62 @@ Copy & paste this code into it:
 
 (Replace my `defaultProfile` and `guid`s with yours in your settings file)
 
+```json
     {
         "$help": "https://aka.ms/terminal-documentation",
         "$schema": "https://aka.ms/terminal-profiles-schema",
-        "actions": [],
+        "actions": 
+        [
+            {
+                "command": 
+                {
+                    "action": "copy",
+                    "singleLine": false
+                },
+                "keys": "ctrl+c"
+            },
+            {
+                "command": "paste",
+                "keys": "ctrl+v"
+            },
+            {
+                "command": "find",
+                "keys": "ctrl+shift+f"
+            },
+            {
+                "command": 
+                {
+                    "action": "splitPane",
+                    "split": "auto",
+                    "splitMode": "duplicate"
+                },
+                "keys": "alt+shift+d"
+            }
+        ],
+        "copyFormatting": "none",
+        "copyOnSelect": true,
         "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "focusFollowMouse": true,
+        "initialRows": 50,
         "profiles": 
         {
             "defaults": 
             {
-                "background": "#223344",
+                "background": "#15212c",
                 "backgroundImage": "ms-appdata:///local/lime-os-M.png",
                 "backgroundImageAlignment": "topRight",
                 "backgroundImageStretchMode": "none",
                 "colorScheme": "Lime",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
-                "experimental.retroTerminalEffect": false,
                 "font": 
                 {
                     "face": "3270Medium Nerd Font",
-                    //"face": "CodeNewRoman Nerd Font",
-                    "size": 10
+                    "size": 12
                 },
                 "hidden": false,
                 "historySize": 9001,
-                "opacity": 95,
+                "opacity": 72,
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
                 "startingDirectory": "%USERPROFILE%",
@@ -91,68 +122,76 @@ Copy & paste this code into it:
             [
                 {
                     "closeOnExit": "graceful",
+                    "commandline": "%SystemRoot%\\System32\\cmd.exe",
                     "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                    "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
-                    "name": "cmd",
-                    "tabTitle": "cmd"
+                    "name": "Command Prompt"
                 },
                 {
                     "closeOnExit": "graceful",
-                    "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
-                    "guid": "{78b4b215-5722-447b-8b7e-093f96493df2}",
-                    "icon": "%LOCALAPPDATA%/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/git-bash.png",
+                    "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                    "hidden": false,
                     "name": "Git Bash",
-                    "tabTitle": "Bash"
+                    "source": "Git"
+                },
+                {
+                    "closeOnExit": "graceful",
+                    "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                    "hidden": false,
+                    "name": "Ubuntu",
+                    "source": "Windows.Terminal.Wsl"
                 },
                 {
                     "closeOnExit": "graceful",
                     "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                    "icon": "ms-appx:///ProfileIcons/{574e775e-4f2a-5b96-ac1e-a2962a402336}.png",
-                    "name": "Windows PowerShell",
-                    "source": "Windows.Terminal.PowershellCore",
-                    "tabTitle": "PowerShell"
+                    "hidden": false,
+                    "name": "PowerShell",
+                    "source": "Windows.Terminal.PowershellCore"
                 },
                 {
                     "closeOnExit": "never",
-                    "commandline": "Azure",
-                    "connectionType": "{d9fcfdfa-a479-412c-83b7-c5640e61cd62}",
                     "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                    "icon": "ms-appx:///ProfileIcons/{b453ae62-4e3d-5e58-b989-0a998ec441b8}.png",
+                    "hidden": false,
                     "name": "Azure Cloud Shell",
                     "source": "Windows.Terminal.Azure"
+                },
+                {
+                    "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                    "hidden": true,
+                    "name": "Windows PowerShell"
                 }
             ]
         },
         "schemes": 
         [
             {
-                "name": "Lime",
-                "foreground": "#E8F4FF",
                 "background": "#1A1A1A",
-                "cursorColor": "#FFFFFF",
-                "selectionBackground": "#FFFFFF",
                 "black": "#000000",
                 "blue": "#579BD5",
-                "cyan": "#00B6D6",
-                "green": "#4EC9B0",
-                "purple": "#714896",
-                "red": "#E92888",
-                "white": "#EAEAEA",
-                "yellow": "#CE9178",
                 "brightBlack": "#797979",
                 "brightBlue": "#9CDCFE",
                 "brightCyan": "#2BC4E2",
                 "brightGreen": "#1AD69C",
                 "brightPurple": "#975EAB",
-                "brightRed": "#EB2A88",
+                "brightRed": "#f7cbd6",
                 "brightWhite": "#EAEAEA",
-                "brightYellow": "#E9AD95"
+                "brightYellow": "#e9e0b0",
+                "cursorColor": "#FFFFFF",
+                "cyan": "#00B6D6",
+                "foreground": "#E8F4FF",
+                "green": "#4EC9B0",
+                "name": "Lime",
+                "purple": "#b99dd1",
+                "red": "#ee959d",
+                "selectionBackground": "#FFFFFF",
+                "white": "#EAEAEA",
+                "yellow": "#eee094"
             }
         ],
-        //experimental feature, prefer to disable it. 
-        "useAcrylicInTabRow": false 
+        "trimBlockSelection": true,
+        "useAcrylicInTabRow": false,
+        "windowingBehavior": "useAnyExisting"
     }
- 
+ ```
 --------------------------------------------
 **2. Fonts**
 
@@ -176,11 +215,133 @@ Note that you may want to adjust the picture positioning in:
 
 `settings.json` -> `backgroundImageAlignment`.
 
+--------------------------------------------
+**4. oh-my-posh**
+
+Take a loot at `oh-my-posh` from https://ohmyposh.dev/docs/installation/windows and see what it is. 
+
+open PowerShell to install it by typing:
+
+`winget install oh-my-posh`
+
+Make sure your Windows environment variable is pointing to:
+
+`Path -> %userprofile%\AppData\Local\Programs\oh-my-posh\bin`
+
+Restart PowerShell and check that it is working by typing: 
+
+`oh-my-posh` 
+
+(You may need to restart the terminal, or restart the pc for it to take effect)
+
+You can pick your own default theme from https://ohmyposh.dev/docs/themes
+
+Or in this case I have created a custom theme file in `%userprofile%/.oh-my-posh-theme.omp.json`
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+
+    "blocks": [{
+            "alignment": "left",
+            "segments": [{
+                    "type": "text",
+                    "style": "diamond",
+                    "leading_diamond": "\ue0b6",
+                    "foreground": "#ffffff",
+                    "background": "#cc3802",
+                    "template": "{{ if .Env.PNPPSHOST }} \uf8c5 {{ .Env.PNPPSHOST }} {{ end }}"
+                },
+                {
+                    "type": "text",
+                    "style": "powerline",
+                    "foreground": "#ffffff",
+                    "background": "#047e84",
+                    "powerline_symbol": "\ue0b0",
+                    "template": "{{ if .Env.PNPPSSITE }} \uf672 {{ .Env.PNPPSSITE }}{{ end }}"
+                },
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "trailing_diamond": "\ue0b4",
+                    "foreground": "#ffffff",
+                    "background": "#047e84",
+                    "template": "{{ if .Env.PNPPSSITE }}\u00A0{{ end }}"
+                }
+            ],
+            "type": "rprompt"
+        },
+        {
+            "alignment": "left",
+            "segments": [{
+                    "background": "#9A348E",
+                    "foreground": "#ffffff",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "{{ .UserName }} ",
+                    "type": "session"
+                },
+                {
+                    "background": "#DA627D",
+                    "foreground": "#ffffff",
+                    "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "style": "folder"
+                    },
+                    "style": "powerline",
+                    "template": " {{ .Path }} ",
+                    "type": "path"
+                },
+                {
+                    "background": "#FCA17D",
+                    "foreground": "#ffffff",
+                    "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "branch_icon": "",
+                        "fetch_stash_count": true,
+                        "fetch_status": false,
+                        "fetch_upstream_icon": true
+                    },
+                    "style": "powerline",
+                    "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) ",
+                    "type": "git"
+                },
+                {
+                    "background": "#86BBD8",
+                    "foreground": "#ffffff",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+                    "type": "node"
+                },
+                {
+                    "background": "#33658A",
+                    "foreground": "#ffffff",
+                    "properties": {
+                        "time_format": "15:04"
+                    },
+                    "style": "diamond",
+                    "template": " \u2665 {{ .CurrentDate | date .Format }} ",
+                    "trailing_diamond": "\ue0b0",
+                    "type": "time"
+                }
+            ],
+            "type": "prompt"
+        }
+    ],
+    "final_space": true,
+    "version": 2
+}
+```
+
+Restart Windows Terminal to see it take effect.
 
 ---------------------------------------
-**4. PowerShell**
+**5. PowerShell**
 
 Download the latest powerShell and install it from https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows
+
+Install the following plugins:
 
 #Terminal-Icons: displays colour folder & file icons. 
 
@@ -194,39 +355,20 @@ Press A or Y
 `Install-Module -Name PSReadLine`
 Press A or Y
 
---------------------------------------------
-**5. oh-my-posh**
-
-Take a loot at `oh-my-posh` from https://ohmyposh.dev/docs/installation/windows and see what it is. 
-
-open PowerShell to install it by typing:
-
-`winget install oh-my-posh`
-
-Make sure your Windows environment variable is pointing to:
-
-`Path -> C:\Users\kelvi\AppData\Local\Programs\oh-my-posh\bin`
-
-Restart PowerShell and check that it is working by typing: 
-
-`oh-my-posh` 
-
-(You may need to restart the terminal, or restart the pc for it to take effect)
-
 Now in PowerShell test the profile .sp1 file location by typing:
 
 `echo $PROFILE`  
 
 Create the file if does not exist `/Documents/PowerShell/Microsoft.PowerShell_profile.ps1`  and write this into the file:
 
-    oh-my-posh init pwsh --config ~/.jandedobbeleer.omp.json | Invoke-Expression
+```pwsh
+    oh-my-posh init pwsh --config .oh-my-posh-theme.omp.json | Invoke-Expression
     Import-Module -Name Terminal-Icons 
     Import-Module -Name PSReadLine 
     Set-PSReadLineOption -PredictionSource History
     Set-PSReadLineOption -PredictionViewStyle ListView
     Set-PSReadLineOption -EditMode Windows
-
-Restart Windows Terminal to see it take effect.
+```
 
 ----------------------------------------
 **6. Configure Git Bash & VS Code**
@@ -241,9 +383,11 @@ turn on git bash and check:
 
 `echo $HOME` (it should be the same as your cmd & powershell home directory) 
 
-Go to the home directory `C:/Users/{your_name}/` then edit or create the `.bashrc` file:
-    
-    eval "$(oh-my-posh --init --shell bash --config ~/.jandedobbeleer.omp.json)"
+Go to the home directory `%userprofile%` then edit or create the `.bashrc` file:
+
+```bash    
+    eval "$(oh-my-posh --init --shell bash --config .oh-my-posh-theme.omp.json)"
+```
 
 Restart Windows Terminal to see it take effect.
 
@@ -254,7 +398,7 @@ As mentioned above, a Nerd Font is needed for VS Code if you have not already do
 
 Go to VS Code, settings search for `terminal.integrated.fontFamily` and set the font and size there. I have chosen:
 
-`MesloLGM Nerd Font` and `size 10`.
+`MesloLGM Nerd Font` and `font size 10`.
 
 (If you have newly installed the font make sure you restart VS to take effect)
 
@@ -277,17 +421,54 @@ Once you have installed it, you will go to the following folder:
 
 Create `cmd-oh-my-posh.lua` file in the folder:
 
+```lua
     local custom_prompt = clink.promptfilter(50)
     function custom_prompt:filter(prompt)
-        load(io.popen('oh-my-posh init cmd --config ~/.jandedobbeleer.omp.json'):read("*a"))()
+        load(io.popen('oh-my-posh init cmd --config .oh-my-posh-theme.omp.json'):read("*a"))()
     end
+```
 
 Restart Windows Terminal to see it take effect.
 
 -----------------------------------------
 **8. For WSL**
 
-To be explored, but it should be pretty standard following the oh-my-posh docs.
+If you have not Install WSL follow this instrustion https://docs.microsoft.com/en-us/windows/wsl/install
+
+You can run an update for WSL:
+
+`sudo apt update && sudo apt upgrade -y`
+
+Then install homebrew with this instruction https://www.how2shout.com/linux/install-brew-on-wsl-windows-subsystem-for-linux/
+
+Install `oh-my-posh` with `HomeBrew`:
+
+`brew install jandedobbeleer/oh-my-posh/oh-my-posh`
+
+Once that is done, open a WSL terminal and find out where your WSL folder is by typing:
+
+`cd $HOME`
+
+`explorer.exe .` (don't miss the dot `.`)
+
+Now you would get your WSL folder under something like `\\wsl$\Ubuntu\home\{yourname}`
+
+Open the `.bashrc` file under the folder, append this to the end of the file:
+
+```bash
+    eval "$(oh-my-posh --init --shell bash --config .oh-my-posh-theme.omp.json)"
+    clear
+```
+
+Open the `.profile` file under the folder, insert this to the beginning of the file:
+
+(If you have `.bash_profile`, do the same as `.profile` file.)
+
+```bash
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+Restart Windows Terminal to see it take effect.
 
 -----------------------------------------
 **9. Related Software & Versions**
@@ -296,17 +477,9 @@ To be explored, but it should be pretty standard following the oh-my-posh docs.
 |------------------|-----------------------|
 | Windows Terminal | [ v1.12.10983.0 ]     |
 | PowerShell       | [ v7.2.4 win x64 ]    |
+| WSL Ubuntu       | [ v2 ]                |
 | git              | [ v2.36.1.windows.1 ] |
 | clink            | [ v1.3.17.0a95d0 ]    |
 | lua              | [ v5.4.2 ]            |
 
 -----------------------------------------
-**10. Known Issues**
-
-#1. I have noticed that the text & icons in `oh-my-gosh` path are not aligned properly.
-
-![issue1](./images/issue1.png "issue")
-
-#2. The profile takes 2~3 seconds to load up.
-
-![issue2](./images/issue2.png "issue")
