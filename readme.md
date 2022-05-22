@@ -93,7 +93,7 @@ Copy & paste this code into it:
         "copyOnSelect": true,
         "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "focusFollowMouse": true,
-        "initialRows": 50,
+        "initialRows": 30,
         "profiles": 
         {
             "defaults": 
@@ -352,7 +352,7 @@ to install in powerShell type:
 `Install-Module -Name Terminal-Icons`
 Press A or Y
 
-`Install-Module -Name PSReadLine`
+`Install-Module -Name PSReadLine` (use `-Force` if needed)
 Press A or Y
 
 Now in PowerShell test the profile .sp1 file location by typing:
@@ -433,13 +433,23 @@ Restart Windows Terminal to see it take effect.
 -----------------------------------------
 **8. For WSL**
 
-If you have not Install WSL follow this instrustion https://docs.microsoft.com/en-us/windows/wsl/install
+If you have not Install WSL follow this instructionin https://docs.microsoft.com/en-us/windows/wsl/install
+
+run this in PowerShell: 
+
+`wsl --install`
+
+(If it doesn't start check to make sure you don't have any other Windows update pending)
+
+Restart the computer, and Ubuntu installation continues.
 
 You can run an update for WSL:
 
 `sudo apt update && sudo apt upgrade -y`
 
 Then install homebrew with this instruction https://www.how2shout.com/linux/install-brew-on-wsl-windows-subsystem-for-linux/
+
+The installation is going to take some time, wait patiently. When it is done we move on.
 
 Install `oh-my-posh` with `HomeBrew`:
 
