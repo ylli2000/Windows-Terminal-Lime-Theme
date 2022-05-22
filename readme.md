@@ -199,7 +199,7 @@ I have chosen these 2 fonts to work with, let's install them:
 
 https://www.nerdfonts.com/font-downloads
 
-Download and install `3270 font` (for Windows Terminal)
+Download and install `3270 Nerd Font` (for Windows Terminal)
 
 Download and install `MesloLGM Nerd Font` (for Visual Studio Terminal)
 
@@ -408,7 +408,7 @@ Go to VS Code, settings search for `terminal.integrated.fontFamily` and set the 
 
 Get `Lua` from http://luabinaries.sourceforge.net/download.html
 
-No need to install it, just extra all files to the following folder and add Windows system variables:
+Download the `bin` package with the exe & dll files. No need to install it, just extra all files to the following folder and add Windows system variables:
 
 `path -> add c:/Program Files/lua`
 
